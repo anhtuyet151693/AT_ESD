@@ -1,0 +1,189 @@
+'***********************************************************************
+'Todo : REDUNDANT (No found in TestCase)
+'Function Name: SHOP_SAMS_EditExistItem
+'Description: Go to Shop -> Subassembly Measuring Sheet, afterthat edit exist item
+'Parameter: No
+'Return value: 1 if succeed, otherwise nothing
+'***********************************************************************
+Function SHOP_SAMS_EditExistItem
+	GoToSAMS()
+    WpfWindow(APPLICATION_NAME).WpfButton("Edit").Click
+	ReportAction 1, "SHOP_SAMS_EditExistItem" ,"Item is existed"
+    SHOP_SAMS_EditExistItem = 1
+End Function
+
+'***********************************************************************
+'Function Name: FillGeneralInformation
+'Description: Fill data for Shop -> Subassembly Measuring Sheet -> General Section
+'Parameter: 
+' 	- strSubName: text for "Sub Name" textbox
+' 	- strSubNumber: text for "Sub Number" textbox
+' 	- strSubRevision: text for "Sub Revision" textbox
+'Return value: 1 if succeed, otherwise nothing
+'***********************************************************************
+Function FillGeneralInformation (strSubName, strSubNumber, strSubRevision)
+	WpfWindow(APPLICATION_NAME).WpfEdit("SAMS.txt_SubName").Set strSubName
+	WpfWindow(APPLICATION_NAME).WpfEdit("SAMS.txt_SubNumber").Set strSubNumber
+	WpfWindow(APPLICATION_NAME).WpfEdit("SAMS.txt_SubRevision").Set strSubRevision
+	ReportAction 1, "FillGeneralInformation", "Fill General Information, 3 textboxes"	
+	FillGeneralInformation = 1
+End Function
+
+'***********************************************************************
+'Todo : REDUNDANT (No found in TestCase)
+'Function Name: SHOP_SAMS_FillSalesOrderTrackingInfo
+'Description: Fill Sales Order Number in General Tracking Info
+'Parameter:
+'	- strName1 : Name of sales order number
+'	- strName2 : Name of sales order number
+'	- strName3 : Name of sales order number
+'	- strName4 : Name of sales order number
+'Return value:  1 if succeed, otherwise nothing
+'***********************************************************************
+Function SHOP_SAMS_FillSalesOrderTrackingInfo (strName1, strName2, strName3, strName4)
+	WpfWindow(APPLICATION_NAME).WpfEdit("SalesOrderInput").Set strName1
+	WpfWindow(APPLICATION_NAME).WpfEdit("DescriptionInput").Set strName1
+	WpfWindow(APPLICATION_NAME).WpfButton("Add").Click
+	WpfWindow(APPLICATION_NAME).WpfEdit("SalesOrderInput_2").Set strName2
+	WpfWindow(APPLICATION_NAME).WpfEdit("DescriptionInput_2").Set strName2
+	WpfWindow(APPLICATION_NAME).WpfButton("Add").Click
+	WpfWindow(APPLICATION_NAME).WpfEdit("SalesOrderInput_3").Set strName3
+	WpfWindow(APPLICATION_NAME).WpfEdit("DescriptionInput_3").Set strName3
+	WpfWindow(APPLICATION_NAME).WpfButton("Add").Click
+	WpfWindow(APPLICATION_NAME).WpfEdit("SalesOrderInput_4").Set strName4
+	WpfWindow(APPLICATION_NAME).WpfEdit("DescriptionInput_4").Set strName4
+	WpfWindow(APPLICATION_NAME).WpfButton("Add").Click
+	ReportAction 1, "SHOP_SAMS_FillSalesOrderTrackingInfo", "Fill Sales Order Number and Description"	
+	SHOP_SAMS_FillSalesOrderTrackingInfo = 1
+End Function
+
+'***********************************************************************
+'Todo : REDUNDANT (No found in TestCase)
+'Function Name: SHOP_SAMS_AdditionalMeasurements
+'Description: Go to Shop -> Subassembly Measuring Sheet -> Additional Measurements
+'Parameter: No
+'Return value: 1 if succeed, otherwise nothing
+'***********************************************************************
+Function SHOP_SAMS_AdditionalMeasurements()
+	PressObject "obj.Shop.SAMS.AdditionalMeasurements"
+	ReportAction 1, "SHOP_SAMS_AdditionalMeasurements", "Go to Additional Measurements"	
+	SHOP_SAMS_AdditionalMeasurements = 1
+End Function
+
+
+'***********************************************************************
+'Function Name: Proposal_SchematicStandardCompletion_ToolInfo_AddNoteInSubassembly
+'Description: Add new note(s) for special Subassembly
+'Parameter:
+'	- intSubassemblyIndex: index of Subassembly
+'	- intNumOfNote: number of note
+'Return value: 1 if success, -1 if failed
+'***********************************************************************
+Function Proposal_SchematicStandardCompletion_ToolInfo_AddNoteInSubassembly (intSubassemblyIndex, intNumOfNote)
+	If WpfWindow(APPLICATION_NAME).WpfObject("devnamepath:=AddNoteToGroup;Halliburton.Pfg.Business.Entities.Proposal.StandardCompletionSchematic.ScsSchematicInfoGroup;PART_ContentScrollViewer;;InfoView;;;;;;","Index:=" & intSubsemblyIndex).Exist(SHORT_TIME) Then
+		For i = 1 To intNumOfNote Step 1
+			WpfWindow(APPLICATION_NAME).WpfObject("devnamepath:=AddNoteToGroup;Halliburton.Pfg.Business.Entities.Proposal.StandardCompletionSchematic.ScsSchematicInfoGroup;PART_ContentScrollViewer;;InfoView;;;;;;","Index:=" & intSubsemblyIndex).Click
+		Next
+		ReportAction 1, "Proposal_SchematicStandardCompletion_ToolInfo_AddNoteInSubassembly", "Passed"
+		Proposal_SchematicStandardCompletion_ToolInfo_AddNoteInSubassembly = 1
+	Else
+		ReportAction -1, "Proposal_SchematicStandardCompletion_ToolInfo_AddNoteInSubassembly", "Failed"
+		Proposal_SchematicStandardCompletion_ToolInfo_AddNoteInSubassembly = -1
+	End If
+End Function
+
+'***********************************************************************
+'Function Name: Prosposal_HorizontalCompletion_WellBoreInformation_CheckGraphicTypeComboxbox
+'Description: Check if combobox dropdown list is in Biz -> Cement, Open Hole, Surface Casing, Intermediate Casing, Production Casing
+' -strGaphicTypeControl: Name of combobox control
+' -strArray: a string of items in Biz seperated by a comma
+'Return value: 1 if check successfully, -1 if check fail
+'***********************************************************************
+Function Prosposal_HorizontalCompletion_WellBoreInformation_CheckGraphicTypeComboxbox(strGaphicTypeControl,strArray)
+	Dim arrayGraphicType, strGraphicType, blnStatus
+	strGraphicType = WpfWindow(APPLICATION_NAME).WpfComboBox(strGaphicTypeControl).GetROProperty("text")
+	arrayGraphicType = Split(strArray,",")	
+	
+	For i = 0 To UBound(arrayGraphicType)
+		If strGraphicType = arrayGraphicType(i) Then
+			blnStatus = True
+			Exit For
+		Else
+			blnStatus = False
+		End If
+	Next
+	
+	If blnStatus = True Then
+		ReportAction 1,"Check Graphic Type success","Graphic Type combobox is match with Biz"
+		Prosposal_HorizontalCompletion_WellBoreInformation_CheckGraphicTypeComboxbox = 1
+	Else
+		ReportAction -1,"Check Graphic Type fail","Graphic Type combobox should match with Biz"
+		Prosposal_HorizontalCompletion_WellBoreInformation_CheckGraphicTypeComboxbox = -1
+	End If
+End Function
+
+
+'***********************************************************************
+'Function Name: CompareTextOfTextBox
+'Description:  Check text of a text box
+'Parameter:
+'	- strTextBoxName: Text box name
+' 	- strText: The text we need to check
+'Return value: 
+' 	- true: if text of text box equals with strText
+' 	- Otherwise return false
+'***********************************************************************
+Function CompareTextOfTextBox (strTextBoxName, strText)
+	' Check text of Subassembly Name
+	Dim strCurrentValue:  strCurrentValue = GetROProperty("Edit",strTextBoxName, "text")
+	If strCurrentValue <> strText Then
+		ReportAction -1, "Check text of "&strTextBoxName, "Failed"
+		CompareTextOfTextBox = false
+	Else
+		ReportAction 1, "Check text of "&strTextBoxName, "Passed"
+		CompareTextOfTextBox = true
+	End If
+End Function
+
+'***********************************************************************
+'Function Name: SelectValueForTableCbb
+'Description:  Select value for Table Combobox
+'Parameter:
+' 	- strCbbName: Combobox's name
+' 	- strValue: The value that we need to select
+'	- strFrom: De or TC call this function
+'Return value: 1: Invoke successfully; -1: Failed to invoke
+'CreateDate : KHOIDN
+'UpdateDate : 18/06/2013 - KHOIDN
+	'-update Description
+	'-make DOWN_KEY to global varible
+	'-update report result
+'***********************************************************************
+Function SelectValueForTableCbb(strCbbName, strValue, strFrom)
+	Dim blnResult
+	blnResult = True
+	
+	Wait(SHORT_TIME)
+	WpfWindow(APPLICATION_NAME).WpfComboBox(strCbbName).Object.Focus
+	
+	Select Case strValue
+		Case "Casing":
+		Case "Drill Pipe":
+			SendKey DOWN_KEY
+		Case "Tubing":
+			SendKey DOWN_KEY
+			SendKey DOWN_KEY
+		Case Else: 
+			blnResult = False
+	End Select
+	
+	'result
+	If blnResult Then
+		ReportAction 1, StringFormat("Select value : '{0}' successfully .",Array(strValue)), "Passed"
+		SelectValueForTableCbb = 1
+	Else
+		ReportAction -1,StringFormat("Select value : '{0}' fail .",Array(strValue)), "Failed"
+		SelectValueForTableCbb = -1
+	End If	
+	
+End Function

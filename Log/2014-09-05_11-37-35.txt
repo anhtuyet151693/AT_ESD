@@ -1,0 +1,13 @@
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Test Set: ESD_Set.xls
+ 
+
+Test Case: BP_001 - Login
+11:37:41 AM	| Run 	| Login()
+11:37:50 AM	| 1	| Login()
+
+Test Case: BP_002 - New_BP_Successfull
+11:38:04 AM	| Run 	| New_BP()
+11:38:11 AM	| 1	| Get 'Button' with name 'OK' at Browser 'eSkydesk Managment' successfully   --> Passed
+11:38:11 AM	| 1	| Press button 'OK' at Browser 'eSkydesk Managment' successfully  --> Passed

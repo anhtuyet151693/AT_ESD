@@ -1,0 +1,22 @@
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Test Set: ESD_Set.xls
+ 
+
+Test Case: BP_001 - Login
+2:33:21 PM	| Run 	| Login()
+2:33:23 PM	| 1	| Login()
+
+Test Case: BP_002 - New_BP_Successfull
+2:33:26 PM	| Run 	| New_BP()
+2:33:31 PM	| 1	| Get 'Button' with name 'OK' at Browser 'eSkydesk Managment' successfully   --> Passed
+2:33:31 PM	| 1	| Press button 'OK' at Browser 'eSkydesk Managment' successfully  --> Passed
+2:33:35 PM	| 1	| Get 'Button' with name 'OK' at Browser 'eSkydesk Managment' successfully   --> Passed
+2:33:35 PM	| 1	| Press button 'OK' at Browser 'eSkydesk Managment' successfully  --> Passed
+2:33:36 PM	| 1	| New_BP()
+ 
+Complete Test Set: ESD_Set.xls
+ 
+Update result of test set 'ESD_Set.xls'...
+Update result of test set 'ESD_Set.xls' --> Done
+Generate test report for test set 'ESD_Set.xls'...

@@ -1,0 +1,33 @@
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Test Set: ESD_Set.xls
+ 
+
+Test Case: BP_001 - Login_ESD_Ad
+9:21:47 AM	| Run 	| Login()
+9:21:48 AM	| 1	| Login()
+
+Test Case: BP_002 - New_BP_Successfull: Create BP-Add New MetaData-Add New DocTypes
+9:21:51 AM	| Run 	| New_BP()
+9:21:56 AM	| 1	| Get 'Button' with name 'OK' at Browser 'eSkyDesk Management' successfully   --> Passed
+9:21:56 AM	| 1	| Press button 'OK' at Browser 'eSkyDesk Management' successfully  --> Passed
+9:22:00 AM	| 1	| Get 'Button' with name 'OK' at Browser 'eSkyDesk Management' successfully   --> Passed
+9:22:00 AM	| 1	| Press button 'OK' at Browser 'eSkyDesk Management' successfully  --> Passed
+9:22:01 AM	| 1	| New_BP()
+9:22:01 AM	| Run 	| Add_MetaData()
+9:22:04 AM	| 1	| Get 'Button' with name 'Add Meta Data' at Browser 'eSkyDesk Management' successfully   --> Passed
+9:22:05 AM	| 1	| Press button 'Add Meta Data' at Browser 'eSkyDesk Management' successfully  --> Passed
+9:22:08 AM	| 1	| Get 'Button' with name 'OK' at Browser 'eSkyDesk Management' successfully   --> Passed
+9:22:08 AM	| 1	| Press button 'OK' at Browser 'eSkyDesk Management' successfully  --> Passed
+9:22:11 AM	| 1	| Get 'Button' with name 'OK_2' at Browser 'eSkyDesk Management' successfully   --> Passed
+9:22:11 AM	| 1	| Press button 'OK_2' at Browser 'eSkyDesk Management' successfully  --> Passed
+9:22:15 AM	| 1	| Get 'Button' with name 'OK' at Browser 'eSkyDesk Management' successfully   --> Passed
+9:22:15 AM	| 1	| Press button 'OK' at Browser 'eSkyDesk Management' successfully  --> Passed
+9:22:16 AM	| 1	| Add_MetaData()
+ 
+Complete Test Set: ESD_Set.xls
+ 
+Update result of test set 'ESD_Set.xls'...
+Update result of test set 'ESD_Set.xls' --> Done
+Generate test report for test set 'ESD_Set.xls'...
+Generate test report for test set 'ESD_Set.xls' --> Done
