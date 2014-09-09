@@ -1,0 +1,21 @@
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Test Set: ESD_Set.xls
+ 
+
+Test Case: BP_001 - Login_ESD_Ad
+12:47:02 PM	| Run 	| Login()
+12:47:04 PM	| 1	| Login()
+
+Test Case: BP_002 - New_BP_Successfull: Create BP-Add New MetaData-Add New DocTypes
+12:47:07 PM	| Run 	| New_BP()
+12:47:12 PM	| 1	| Get 'Button' with name 'OK' at Browser 'eSkyDesk Management' successfully   --> Passed
+12:47:12 PM	| 1	| Press button 'OK' at Browser 'eSkyDesk Management' successfully  --> Passed
+12:47:16 PM	| 1	| Get 'Button' with name 'OK' at Browser 'eSkyDesk Management' successfully   --> Passed
+12:47:17 PM	| 1	| Press button 'OK' at Browser 'eSkyDesk Management' successfully  --> Passed
+12:47:18 PM	| 1	| New_BP()
+12:47:18 PM	| Run 	| Add_MetaData()
+12:47:21 PM	| 1	| Get 'Button' with name 'Add Meta Data' at Browser 'eSkyDesk Management' successfully   --> Passed
+12:47:21 PM	| 1	| Press button 'Add Meta Data' at Browser 'eSkyDesk Management' successfully  --> Passed
+12:47:25 PM	| 1	| Get 'Button' with name 'OK' at Browser 'eSkyDesk Management' successfully   --> Passed
+12:47:25 PM	| 1	| Press button 'OK' at Browser 'eSkyDesk Management' successfully  --> Passed

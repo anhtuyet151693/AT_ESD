@@ -1,18 +1,28 @@
-﻿ @@ hightlight id_;_65776_;_script infofile_;_ZIP::ssf329.xml_;_
-
+﻿ @@ hightlight id_;_Browser("eSkyDesk Management").Page("eSkydesk Managment 2").WebList("select")_;_script infofile_;_ZIP::ssf346.xml_;_
+ @@ hightlight id_;_65782_;_script infofile_;_ZIP::ssf343.xml_;_
 Option Explicit
 Dim rc, i, strTestSetName, arrTestSet, strReportFile, iElapsedTime
 
-'Set up environment for TestSet
 Preset_TestSet
 
-'  Kill Excel process
-OS_KillBrowsers @@ hightlight id_;_Browser("eSkyDesk Management").Page("eSkydesk Managment").WebButton("Add DocType")_;_script infofile_;_ZIP::ssf336.xml_;_
+WEB_URL = "http://tfs.innoria.com:3000/"
 
-'OS_KillProcess LOCAL_HOST_NAME, EXCEL_PROCESS_NAME 
+'
+'Browser("eSkyDesk Management").Page("eSkyDesk Management").WebButton("Login").Click 140,20 @@ hightlight id_;_Browser("eSkyDesk Management").Page("eSkyDesk Management").WebButton("Login")_;_script infofile_;_ZIP::ssf357.xml_;_
+'Browser("eSkyDesk Management").Page("eSkyDesk Management").Sync @@ hightlight id_;_Browser("eSkyDesk Management").Page("eSkyDesk Management")_;_script infofile_;_ZIP::ssf358.xml_;_
+'Browser("eSkyDesk Management").Navigate "http://tfs.innoria.com:3000/Authentication/Login"
+'Browser("eSkyDesk Management").Page("eSkydesk Managment").Sync @@ hightlight id_;_Browser("eSkyDesk Management").Page("eSkydesk Managment")_;_script infofile_;_ZIP::ssf359.xml_;_
+'Browser("eSkyDesk Management").Back
+'Browser("eSkyDesk Management").Page("eSkydesk Managment").WebEdit("UserName").Set "adminvdfvdfgfdg" @@ hightlight id_;_Browser("eSkyDesk Management").Page("eSkydesk Managment").WebEdit("UserName")_;_script infofile_;_ZIP::ssf360.xml_;_
+'Browser("eSkyDesk Management").Page("eSkydesk Managment").WebButton("Login").Click 163,13 @@ hightlight id_;_Browser("eSkyDesk Management").Page("eSkydesk Managment").WebButton("Login")_;_script infofile_;_ZIP::ssf361.xml_;_
+'Browser("eSkyDesk Management").Page("eSkydesk Managment").Sync @@ hightlight id_;_Browser("eSkyDesk Management").Page("eSkydesk Managment")_;_script infofile_;_ZIP::ssf362.xml_;_
+'Browser("eSkyDesk Management").Navigate "http://tfs.innoria.com:3000/Authentication/Login"
+'Browser("eSkyDesk Management").Page("eSkyDesk Management_2").Sync @@ hightlight id_;_Browser("eSkyDesk Management").Page("eSkyDesk Management_2")_;_script infofile_;_ZIP::ssf363.xml_;_
+'Window("Window").Click 684,175 @@ hightlight id_;_65798_;_script infofile_;_ZIP::ssf364.xml_;_
+'Window("Window").Click 689,148 @@ hightlight id_;_65798_;_script infofile_;_ZIP::ssf365.xml_;_
+'Browser("eSkyDesk Management").Page("eSkyDesk Management_2").Check CheckPoint("eSkyDesk Management") @@ hightlight id_;_Browser("eSkyDesk Management").Page("eSkyDesk Management_2")_;_script infofile_;_ZIP::ssf366.xml_;_
 
-'Indentify application path
-WEB_URL = "http://192.168.1.201:3000/"
+
 
 Datatable.AddSheet("TestCase")
 Datatable.ImportSheet TESTCASE_FOLDER & TESTCASE_SOURCE, "TestCase", "TestCase" 

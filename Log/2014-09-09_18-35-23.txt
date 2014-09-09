@@ -1,0 +1,11 @@
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Test Set: ESD_Set.xls
+ 
+
+Test Case: BP_001 - Login_ESD_Ad
+6:35:30 PM	| Run 	| Login()
+6:35:32 PM	| 1	| Get Page'Login_Page' at Browser 'eSkyDesk Management' successfully   --> Passed
+6:36:04 PM	| 1	| UserName123 or PassWorkjngjkfg,   --> Passed
+6:36:27 PM	| 1	| UserNamehsbggygjyg or PassWork123456,   --> Passed
+6:36:50 PM	| 1	| UserNameadmin or PassWork123456,   --> Passed

@@ -1,0 +1,12 @@
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Test Set: ESD_Set.xls
+ 
+
+Test Case: BP_001 - Login_ESD_Ad
+11:25:48 AM	| Run 	| Login()
+11:25:49 AM	| 1	| Login()
+
+Test Case: BP_002 - New_BP_Successfull: Create BP-Add New MetaData-Add New DocTypes
+11:25:52 AM	| Run 	| New_BP()
+11:25:54 AM	| 1	| Get Page'New_BP_Page' at Browser 'eSkyDesk Management' successfully   --> Passed

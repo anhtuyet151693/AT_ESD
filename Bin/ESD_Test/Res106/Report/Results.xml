@@ -1,0 +1,288 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE Report
+[
+<!ELEMENT Report (General ,(Doc|BPT)) >
+<!ATTLIST Report ver CDATA #REQUIRED tmZone CDATA #REQUIRED>
+
+<!ELEMENT General ( DocLocation ) >
+<!ATTLIST General productName CDATA #REQUIRED productVer CDATA #REQUIRED os CDATA #REQUIRED host CDATA #REQUIRED qcserver CDATA #IMPLIED qcproject CDATA #IMPLIED SolManSolutionId CDATA #IMPLIED SolManProjectId CDATA #IMPLIED SolManTestPlanId CDATA #IMPLIED SolManTestPackageId CDATA #IMPLIED SolManUserInfoData CDATA #IMPLIED  >
+
+<!ELEMENT BPT (DName,Res,DVer?,TSet?,TInst?,NodeArgs,AdditionalInfo*,Doc*) >
+<!ATTLIST BPT rID ID #REQUIRED >
+
+<!ELEMENT Doc (DName,ConfName?,Res,DVer?,TSet?,TInst?,RunType?,DT?,AdditionalInfo*,Step*,DIter*,Step*,Action*,Doc*,Summary?,TestMaintenanceSummary*,NodeArgs?) >
+<!ATTLIST Doc rID ID #REQUIRED type (Test|BC|BPTWrapperTest|Flow|Group|Action) "Test" productName CDATA #REQUIRED BCIter CDATA #IMPLIED >
+
+<!ELEMENT RunType ( #PCDATA )>
+<!ATTLIST RunType fmStep (False|True) "False" batch (False|True) "False" upDesc (False|True) "False" upChk (False|True) "False" upAS (False|True) "False">
+
+<!ELEMENT DName ( #PCDATA ) >
+
+<!ELEMENT ConfName ( #PCDATA ) >
+
+<!ELEMENT Res ( #PCDATA ) >
+
+<!ELEMENT AdditionalInfo (AdditionalDataName,AdditionalDataValue ) >
+
+<!ELEMENT AdditionalDataName ( #PCDATA ) >
+
+<!ELEMENT AdditionalDataValue ( #PCDATA ) >
+
+<!ELEMENT DVer ( #PCDATA ) >
+
+<!ELEMENT TSet ( #PCDATA ) >
+
+<!ELEMENT TInst ( #PCDATA ) >
+
+<!ELEMENT DIter (Step*,Action+,Summary?,NodeArgs)>
+<!ATTLIST DIter rID ID #REQUIRED iterID CDATA #REQUIRED>
+
+<!ELEMENT DocLocation ( #PCDATA )>
+
+<!ELEMENT Action (AName,AIter*,(Step|HtmlStep|Action)*, Summary,ActionMaintenanceSummary*, NodeArgs ) >
+<!ATTLIST Action rID ID #REQUIRED>
+
+<!ELEMENT AIter ((Step|HtmlStep|Action)*,DataMapping?, Summary?,NodeArgs) >
+<!ATTLIST AIter rID ID #REQUIRED iterID CDATA #REQUIRED isCountable (False|True) "False" >
+
+<!ELEMENT AName ( #PCDATA ) >
+
+<!ELEMENT TestMaintenanceSummary (ActionMaintenanceSummary*) >
+<!ATTLIST TestMaintenanceSummary ObjectsAdded CDATA #REQUIRED ObjectsUpdated CDATA #REQUIRED StepsUpdated CDATA #REQUIRED StepsComments CDATA #REQUIRED><!ELEMENT ActionMaintenanceSummary (ObjectChange* ) >
+<!ATTLIST ActionMaintenanceSummary Action CDATA #REQUIRED Objects CDATA #REQUIRED Updated CDATA #REQUIRED LinesTotal CDATA #REQUIRED Added CDATA #REQUIRED LinesUpdated CDATA #REQUIRED>
+
+<!ELEMENT ObjectChange  (Hierarchy, PropertyChangeList* ) >
+<!ATTLIST ObjectChange Operation CDATA #IMPLIED OriginalRepository CDATA #IMPLIED>
+
+<!ELEMENT PropertyChangeList (PropertyDef*) >
+
+<!ELEMENT PropertyDef (OriginalValue, NewValue) >
+<!ATTLIST PropertyDef PropName CDATA #REQUIRED OriginRegularExpression (True|False) "False" NewRegularExpression (True|False) "False" AddedProperty (True|False) "False" >
+
+<!ELEMENT OriginalValue ( #PCDATA )>
+
+<!ELEMENT NewValue ( #PCDATA )>
+
+<!ELEMENT Hierarchy  (ObjectName, Hierarchy*) >
+<!ATTLIST Hierarchy MicClass CDATA #REQUIRED>
+
+<!ELEMENT ObjectName  ( #PCDATA ) >
+
+<!ELEMENT Step (Obj,Details,Time,TimeTick* ,(Step|HtmlStep|Doc)*, DataMapping?, NodeArgs) >
+<!ATTLIST Step rID ID #REQUIRED retval CDATA #IMPLIED>
+
+<!ELEMENT HtmlStep (HTML,TimeTick*,(Step|HtmlStep|Doc)*,NodeArgs) >
+<!ATTLIST HtmlStep rID ID #REQUIRED >
+
+<!ELEMENT Obj ( #PCDATA ) >
+<!ATTLIST Obj plainTxt (False|True) "True">
+
+<!ELEMENT Details ( #PCDATA ) >
+<!ATTLIST Details plainTxt (False|True) "True">
+
+<!ELEMENT Time ( #PCDATA ) >
+
+<!ELEMENT HTML ( #PCDATA ) >
+
+<!ELEMENT Disp ( #PCDATA ) >
+
+<!ELEMENT TimeTick ( #PCDATA ) >
+
+<!ELEMENT DataMapping ( DataMappedItem* )>
+<!ELEMENT DataMappedItem EMPTY >
+<!ATTLIST DataMappedItem dsName CDATA #REQUIRED >
+<!ATTLIST DataMappedItem rowId CDATA #REQUIRED >
+
+<!ELEMENT NodeArgs (Disp,TopPane?,BtmPane?,ExtendedInfo? )>
+<!ATTLIST NodeArgs eType CDATA #REQUIRED icon CDATA #REQUIRED nRep CDATA #REQUIRED UserNote CDATA #IMPLIED filter (False|True) "True">
+<!ATTLIST NodeArgs status (Passed|Failed|Done|Warning|Information) "Done">
+<!ATTLIST NodeArgs iconSel CDATA #IMPLIED nType CDATA #IMPLIED MovieMarker CDATA "">
+<!ATTLIST NodeArgs Source CDATA #IMPLIED SourceLine CDATA #IMPLIED StepFlowItemKey CDATA #IMPLIED >
+
+<!ELEMENT TopPane (Path)>
+
+<!ELEMENT BtmPane ( (Path|WR)?,ASHilite?)>
+<!ATTLIST BtmPane vType CDATA "HTML">
+
+<!ELEMENT Path ( #PCDATA ) >
+
+<!ELEMENT ASHilite ( #PCDATA ) >
+
+<!ELEMENT WR ( #PCDATA ) >
+
+<!ELEMENT ExtendedInfo ( StepData ) >
+
+<!ATTLIST ExtendedInfo StepType CDATA #REQUIRED>
+<!ELEMENT DT (NodeArgs) >
+<!ATTLIST DT rID ID #REQUIRED>
+
+<!ELEMENT Summary (Param*)>
+<!ATTLIST Summary sTime CDATA #IMPLIED eTime CDATA #IMPLIED passed CDATA #IMPLIED failed CDATA #IMPLIED warnings CDATA #IMPLIED retval CDATA #IMPLIED stopped (False|True) "False" >
+
+<!ELEMENT Param (ParamName,ParamVal)+ >
+<!ATTLIST Param paramInOut (In|Out) "In">
+
+<!ELEMENT ParamName ( #PCDATA ) >
+
+<!ELEMENT ParamVal ( #PCDATA ) >
+
+]
+>
+<Report ver="2.0" tmZone="SE Asia Standard Time">
+<General productName="HP Unified Functional Testing" productVer="12.01" os="Windows 8" host="NOTEBOOK"><DocLocation><![CDATA[C:\ESD_Test\Bin\ESD_Test]]></DocLocation></General>
+<Doc rID="T1"   productName= "HP Unified Functional Testing"  >
+<DName><![CDATA[ESD_Test]]></DName>
+<Res><![CDATA[Res106]]></Res>
+<DT rID="T2">
+<NodeArgs eType="Table" icon="2" nRep="4" filter="False" >
+<Disp><![CDATA[Run-Time Data Table]]></Disp>
+<BtmPane vType="Table" >
+<Path><![CDATA[Default.xls]]></Path>
+</BtmPane>
+</NodeArgs>
+</DT>
+<DIter rID="T3" iterID="1" >
+<Step rID="T4">
+<Obj plainTxt="False" ><![CDATA[StartUp Browser]]></Obj>
+<Details plainTxt="False" ><![CDATA[Browser]]></Details>
+<Time><![CDATA[9/7/2014 - 10:55:58]]></Time>
+<TimeTick>1410062158</TimeTick>
+<Step rID="T5">
+<Obj plainTxt="False" ><![CDATA[StartUp Browser]]></Obj>
+<Details plainTxt="False" ><![CDATA[Navigate to http://192.168.1.201:3000]]></Details>
+<Time><![CDATA[9/7/2014 - 10:55:58]]></Time>
+<TimeTick>1410062158</TimeTick>
+<NodeArgs eType="Replay" icon="4" nRep="9" nType="Navigate to http://192.168.1.201:3000" Source="Action0" SourceLine="-1" >
+<Disp><![CDATA[StartUp Browser]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T6">
+<Obj plainTxt="False" ><![CDATA[StartUp Browser.Sync]]></Obj>
+<Details plainTxt="False" ><![CDATA[]]></Details>
+<Time><![CDATA[9/7/2014 - 10:56:41]]></Time>
+<TimeTick>1410062201</TimeTick>
+<NodeArgs eType="Replay" icon="4" nRep="11" Source="Action0" SourceLine="-1" >
+<Disp><![CDATA[StartUp Browser.Sync]]></Disp>
+</NodeArgs>
+</Step>
+<NodeArgs eType="Context" icon="4" nRep="8" Source="Action0" SourceLine="-1" >
+<Disp><![CDATA[StartUp Browser]]></Disp>
+</NodeArgs>
+</Step>
+<Action rID="T7">
+<AName><![CDATA[ESD]]></AName>
+<Step rID="T8">
+<Obj plainTxt="False" ><![CDATA[eSkyDesk Management]]></Obj>
+<Details plainTxt="False" ><![CDATA[Browser]]></Details>
+<Time><![CDATA[9/7/2014 - 10:57:05]]></Time>
+<TimeTick>1410062225</TimeTick>
+<Step rID="T9">
+<Obj plainTxt="False" ><![CDATA[Login_Page]]></Obj>
+<Details plainTxt="False" ><![CDATA[Page]]></Details>
+<Time><![CDATA[9/7/2014 - 10:57:05]]></Time>
+<TimeTick>1410062225</TimeTick>
+<Step rID="T10">
+<Obj plainTxt="False" ><![CDATA["Login"- Description mismatch]]></Obj>
+<Details plainTxt="False" ><![CDATA[The object was not found using the test object description. Check the object's properties.]]></Details>
+<Time><![CDATA[9/7/2014 - 10:57:05]]></Time>
+<TimeTick>1410062225</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="57" status="Warning" >
+<Disp><![CDATA["Login"- Description mismatch]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T11">
+<Obj plainTxt="False" ><![CDATA["Login"- Smart Identification]]></Obj>
+<Details plainTxt="False" ><![CDATA[<P><span class="text">The smart identification mechanism was invoked.</span></P><P><SPAN class=text>Reason: object not found.</SPAN></P>           <SPAN class=text><b>Original description:</b></SPAN><br>type=submit<br>name=Login<br>micclass=WebButton<br>html tag=BUTTON<br><P><FONT face=Verdana size=2><SPAN class=text><B>Smart Identification Alternative Description: </B></SPAN></FONT></P><FONT face=Verdana size=2><u>Base filter properties (1 objects found)&nbsp;</FONT></u><br>
+micclass=WebButton<br>html tag=BUTTON<br>]]></Details>
+<Time><![CDATA[9/7/2014 - 10:57:05]]></Time>
+<TimeTick>1410062225</TimeTick>
+<NodeArgs eType="Replay" icon="8" nRep="58" >
+<Disp><![CDATA["Login"- Smart Identification]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T12">
+<Obj plainTxt="False" ><![CDATA[Login.Click]]></Obj>
+<Details plainTxt="False" ><![CDATA[]]></Details>
+<Time><![CDATA[9/7/2014 - 10:57:05]]></Time>
+<TimeTick>1410062225</TimeTick>
+<NodeArgs eType="Replay" icon="7" nRep="59" >
+<Disp><![CDATA[Login.Click]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T13">
+<Obj plainTxt="False" ><![CDATA[[ Window ].Exist]]></Obj>
+<Details plainTxt="False" ><![CDATA["Object does not exist"]]></Details>
+<Time><![CDATA[9/7/2014 - 10:57:06]]></Time>
+<TimeTick>1410062226</TimeTick>
+<NodeArgs eType="Replay" icon="9" nRep="61" >
+<Disp><![CDATA[[ Window ].Exist]]></Disp>
+</NodeArgs>
+</Step>
+<NodeArgs eType="Context" icon="6" nRep="56" status="Warning" >
+<Disp><![CDATA[Login_Page]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T14">
+<Obj plainTxt="False" ><![CDATA[New_BP_Page]]></Obj>
+<Details plainTxt="False" ><![CDATA[Page]]></Details>
+<Time><![CDATA[9/7/2014 - 10:57:30]]></Time>
+<TimeTick>1410062250</TimeTick>
+<Step rID="T15">
+<Obj plainTxt="False" ><![CDATA[Add Batch Profile]]></Obj>
+<Details plainTxt="False" ><![CDATA[Cannot identify the object "Add Batch Profile" (of class WebElement). Verify that this object's properties match an object currently displayed in your application.]]></Details>
+<Time><![CDATA[9/7/2014 - 10:57:30]]></Time>
+<TimeTick>1410062250</TimeTick>
+<Step rID="T16">
+<Obj plainTxt="False" ><![CDATA[Add Batch Profile]]></Obj>
+<Details plainTxt="False" ><![CDATA[Object's physical description:<br>Mercury Class = WebElement<br>Html Tag = A<br>_xpath = //A[@id="add_batch_profile"]<br>|Visible = -1<br>innertext = Add Batch Profile<br>Html Id = add_batch_profile<br>DHTML Class = btn btn-primary btn-sm<br>]]></Details>
+<Time><![CDATA[9/7/2014 - 10:57:30]]></Time>
+<TimeTick>1410062250</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="66" status="Warning" nType="Description" >
+<Disp><![CDATA[Add Batch Profile]]></Disp>
+</NodeArgs>
+</Step>
+<NodeArgs eType="Replay" icon="10" nRep="65" status="Failed" nType="Run Error" >
+<Disp><![CDATA[Add Batch Profile]]></Disp>
+</NodeArgs>
+</Step>
+<NodeArgs eType="Context" icon="6" nRep="64" status="Failed" >
+<Disp><![CDATA[New_BP_Page]]></Disp>
+</NodeArgs>
+</Step>
+<NodeArgs eType="Context" icon="4" nRep="55" status="Failed" >
+<Disp><![CDATA[eSkyDesk Management]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T17">
+<Obj plainTxt="False" ><![CDATA[Run Error]]></Obj>
+<Details plainTxt="False" ><![CDATA[Cannot identify the object &quot;Add Batch Profile&quot; (of class WebElement). Verify that this object's properties match an object currently displayed in your application.<BR>Function file: C:\QTPF\Resource\Functions\ESD.Function.qfl<BR>Line (51): &quot;	return = WEB_BROWSER.Page(&quot;New_BP_Page&quot;).WebElement(&quot;Add Batch Profile&quot;).Check (CheckPoint(&quot;Add Batch Profile&quot;))&quot;.]]></Details>
+<Time><![CDATA[9/7/2014 - 10:57:30]]></Time>
+<TimeTick>1410062250</TimeTick>
+<NodeArgs eType="Replay" icon="11" nRep="67" status="Failed" Source="C:\QTPF\Resource\Functions\ESD.Function.qfl" SourceLine="50" >
+<Disp><![CDATA[Run Error]]></Disp>
+</NodeArgs>
+</Step>
+<Step rID="T18">
+<Obj plainTxt="False" ><![CDATA[Stop Run]]></Obj>
+<Details plainTxt="False" ><![CDATA[Run stopped by user.]]></Details>
+<Time><![CDATA[9/7/2014 - 10:58:39]]></Time>
+<TimeTick>1410062319</TimeTick>
+<NodeArgs eType="General" icon="12" nRep="68" >
+<Disp><![CDATA[Stop Run]]></Disp>
+</NodeArgs>
+</Step>
+<Summary sTime="9/7/2014 - 10:56:41" eTime="9/7/2014 - 10:58:39" passed="0" failed="2" warnings="2" ></Summary>
+<NodeArgs eType="StartAction" icon="5" nRep="12" status="Failed" >
+<Disp><![CDATA[ESD Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="6" status="Failed" >
+<Disp><![CDATA[ESD_Test Iteration 1 (Row 1)]]></Disp>
+</NodeArgs>
+</DIter>
+<Summary sTime="9/7/2014 - 10:55:57" eTime="9/7/2014 - 10:58:39" passed="0" failed="2" warnings="2" ></Summary>
+<NodeArgs eType="StartTest" icon="1" nRep="3" status="Failed" >
+<Disp><![CDATA[Test ESD_Test Summary]]></Disp>
+</NodeArgs>
+</Doc>
+</Report>

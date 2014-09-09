@@ -1,0 +1,37 @@
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Test Set: ESD_Set.xls
+ 
+
+Test Case: BP_001 - Login_ESD_Ad
+11:59:10 AM	| Run 	| Login()
+11:59:12 AM	| 1	| Login()
+
+Test Case: BP_002 - New_BP_Successfull: Create BP-Add New MetaData-Add New DocTypes
+11:59:14 AM	| Run 	| New_BP()
+11:59:18 AM	| 1	| Get 'Button' with name 'OK' at Browser 'eSkyDesk Management' successfully   --> Passed
+11:59:18 AM	| 1	| Press button 'OK' at Browser 'eSkyDesk Management' successfully  --> Passed
+11:59:22 AM	| 1	| Get 'Button' with name 'OK' at Browser 'eSkyDesk Management' successfully   --> Passed
+11:59:25 AM	| 1	| Press button 'OK' at Browser 'eSkyDesk Management' successfully  --> Passed
+11:59:48 AM	| 1	| Get 'Button' with name 'OK' at Browser 'eSkyDesk Management' successfully   --> Passed
+11:59:52 AM	| 1	| Press button 'OK' at Browser 'eSkyDesk Management' successfully  --> Passed
+11:59:53 AM	| 1	| New_BP()
+11:59:53 AM	| Run 	| Add_MetaData()
+11:59:56 AM	| 1	| Get 'Button' with name 'Add Meta Data' at Browser 'eSkyDesk Management' successfully   --> Passed
+11:59:56 AM	| 1	| Press button 'Add Meta Data' at Browser 'eSkyDesk Management' successfully  --> Passed
+11:59:59 AM	| 1	| Get 'Button' with name 'OK' at Browser 'eSkyDesk Management' successfully   --> Passed
+12:00:00 PM	| 1	| Press button 'OK' at Browser 'eSkyDesk Management' successfully  --> Passed
+12:00:03 PM	| 1	| Get 'Button' with name 'OK_2' at Browser 'eSkyDesk Management' successfully   --> Passed
+12:00:03 PM	| 1	| Press button 'OK_2' at Browser 'eSkyDesk Management' successfully  --> Passed
+12:00:08 PM	| 1	| Get 'Button' with name 'OK' at Browser 'eSkyDesk Management' successfully   --> Passed
+12:00:08 PM	| 1	| Press button 'OK' at Browser 'eSkyDesk Management' successfully  --> Passed
+12:00:09 PM	| 1	| Add_MetaData()
+12:00:09 PM	| Run 	| Add_DocTypes()
+12:00:11 PM	| Null	| Add_DocTypes()
+ 
+Complete Test Set: ESD_Set.xls
+ 
+Update result of test set 'ESD_Set.xls'...
+Update result of test set 'ESD_Set.xls' --> Done
+Generate test report for test set 'ESD_Set.xls'...
+Generate test report for test set 'ESD_Set.xls' --> Done

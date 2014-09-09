@@ -1,0 +1,12 @@
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Test Set: ESD_Set.xls
+ 
+
+Test Case: BP_001 - Login_ESD_Ad
+9:20:42 AM	| Run 	| Login()
+9:20:45 AM	| 1	| Get 'Edit' with name 'UserName' at window '' successfully   --> Passed
+9:20:46 AM	| 1	| Login()
+
+Test Case: BP_002 - New_BP_Successfull: Create BP-Add New MetaData-Add New DocTypes
+9:20:49 AM	| Run 	| New_BP()

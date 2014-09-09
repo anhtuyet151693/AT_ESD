@@ -1,0 +1,21 @@
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Test Set: ESD_Set.xls
+ 
+
+Test Case: BP_001 - Login_ESD_Ad
+11:09:56 AM	| Run 	| Login()
+11:09:57 AM	| 1	| Login()
+
+Test Case: BP_002 - New_BP_Successfull: Create BP-Add New MetaData-Add New DocTypes
+11:10:00 AM	| Run 	| New_BP()
+11:10:04 AM	| 1	| Get 'Button' with name 'BP_btn_err_BPNotEmpty_OK' at Browser 'eSkyDesk Management' successfully   --> Passed
+11:10:04 AM	| 1	| Press button 'BP_btn_err_BPNotEmpty_OK' at Browser 'eSkyDesk Management' successfully  --> Passed
+11:10:07 AM	| 1	| Get 'Button' with name 'BP_btn_Save_NewBP' at Browser 'eSkyDesk Management' successfully   --> Passed
+11:10:08 AM	| 1	| Press button 'BP_btn_Save_NewBP' at Browser 'eSkyDesk Management' successfully  --> Passed
+11:10:11 AM	| 1	| Get 'Button' with name 'BP_btn_err_BPNotEmpty_OK' at Browser 'eSkyDesk Management' successfully   --> Passed
+11:10:11 AM	| 1	| Press button 'BP_btn_err_BPNotEmpty_OK' at Browser 'eSkyDesk Management' successfully  --> Passed
+11:10:12 AM	| 1	| New_BP()
+11:10:12 AM	| Run 	| Add_MetaData()
+11:10:15 AM	| 1	| Get 'Button' with name 'BP_btn_Add Meta Data' at Browser 'eSkyDesk Management' successfully   --> Passed
+11:10:15 AM	| 1	| Press button 'BP_btn_Add Meta Data' at Browser 'eSkyDesk Management' successfully  --> Passed

@@ -1,0 +1,24 @@
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Test Set: ESD_Set.xls
+ 
+
+Test Case: BP_001 - Login_ESD_Ad
+10:35:14 PM	| Run 	| Login()
+10:35:16 PM	| 1	| Get Page'Login_Page' at Browser 'eSkyDesk Management' successfully   --> Passed
+10:35:47 PM	| -1	| UserName123 or PassWorkjngjkfg  --> Failed
+10:36:12 PM	| -1	| UserNamehsbggygjyg or PassWork123456  --> Failed
+10:36:37 PM	| -1	| UserNameadmin or PassWork123456  --> Failed
+10:37:39 PM	| 1	| UserNameAT_Tuyet or PassWork123456,   --> Passed
+10:37:40 PM	| 1	| Login()
+
+Test Case: BP_002 - New_BP_Successfull: Create BP-Add New MetaData-Add New DocTypes
+10:37:44 PM	| Run 	| New_BP()
+10:37:46 PM	| 1	| Get Page'New_BP_Page' at Browser 'eSkyDesk Management' successfully   --> Passed
+ 
+Complete Test Set: ESD_Set.xls
+ 
+Update result of test set 'ESD_Set.xls'...
+Update result of test set 'ESD_Set.xls' --> Done
+Generate test report for test set 'ESD_Set.xls'...
+Generate test report for test set 'ESD_Set.xls' --> Done
